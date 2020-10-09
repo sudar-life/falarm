@@ -1,0 +1,26 @@
+body,
+p,
+ul {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Nanum Barun Gothic";
+}
+li {
+  list-style-type: none;
+}
+.font-red {
+  color: red;
+}
+.curser {
+  cursor: pointer;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+.pa-horizontal-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
