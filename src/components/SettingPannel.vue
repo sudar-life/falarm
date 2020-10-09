@@ -151,6 +151,8 @@ export default {
       if (obj == null) {
         this.hour = new Date().getHours();
         this.minutes = new Date().getMinutes();
+        this.termStart = 5;
+        this.termEnd = 10;
       } else {
         this.hour = obj.time.hour;
         this.minutes = obj.time.minutes;
