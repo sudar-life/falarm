@@ -56,7 +56,6 @@
     <div class="schedule-list-container">
       <b>스케쥴 리스트</b>
       <hr />
-      <p class="mt20 bold from-time" v-text="fromTimerView"></p>
       <p
         class="mt20 bold from-time"
         style="font-size:16px"
@@ -64,6 +63,24 @@
       ></p>
       <ul></ul>
       <div class="mt20">
+         <button
+          class="btn start-btn curser"
+          @click="startAlarmWithRandom()"
+        >
+          <i class="far fa-clock"></i> 랜덤초반복
+        </button>
+         <button
+          class="btn start-btn curser"
+          @click="startAlarmWithMinutes(5)"
+        >
+          <i class="far fa-clock"></i> 5분반복
+        </button>
+         <button
+          class="btn start-btn curser"
+          @click="startAlarmWithMinutes(10)"
+        >
+          <i class="far fa-clock"></i> 10분반복
+        </button>
         <button
           v-if="!isStart"
           class="btn start-btn curser"
@@ -164,6 +181,16 @@ export default {
     startAlarm: function() {
       this.isStart = true;
       this.run();
+    },
+    startAlarmWithMinutes : function(minutes){
+      this.termStart = minutes*60;
+      this.termEnd = minutes*60;
+      this.startAlarm();
+    },
+    startAlarmWithRandom : function(){
+      this.termStart =5;
+      this.termEnd = 10;
+      this.startAlarm();
     },
     resetAlarm: function() {
       if (this.isStart) {
